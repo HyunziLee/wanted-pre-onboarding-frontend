@@ -2,28 +2,32 @@ import styled from "@emotion/styled";
 import { Container } from "react-bootstrap";
 
 export const Wrapper = styled(Container)`
-    width: 100vh;
-    
+    width: 100vw;
+ 
+   
 `
 
 export const Main = styled.main`
-    width: 100%;
+    width: 50%;
+    height: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  
     
-    
-    
-
+ 
 `
 
 export const InputWrappers = styled.div`
-    width: 100%;
-    height: 300px;
-    background-color: yellow;
+    width: 90%;
+ 
 `
 
 export const InputWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    background-color: aliceblue;
     
 `
 
@@ -32,11 +36,12 @@ export const Text = styled.div`
 
 `
 export const Input = styled.input`
-    width: 40%;
+    width: 100%;
     height: 30px;
 `
 
 export const Button = styled.button`
-  
+  width: 200px;
+  height: 50px;
 
 `

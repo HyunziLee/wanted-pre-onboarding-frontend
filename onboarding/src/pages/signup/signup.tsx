@@ -35,17 +35,18 @@ export default function Signup(){
             "Content-Type": "application/json"
           }
         })
+        console.log(response)
     }catch(error){console.log(error)}
   }
   
     return(
         <s.Wrapper>
           <s.Main>
-            <s.InputWrappers>
             <s.Text>회원가입</s.Text>
+            <s.InputWrappers>
             <form onSubmit={handleSubmit(createAccount)}>
               <s.InputWrapper>
-                <s.Text>아이디</s.Text>
+                <s.Text>이메일</s.Text>
                 <s.Input {...register("email")}/>
                 <s.Text>{formState.errors.email?.message}</s.Text>
               </s.InputWrapper>
