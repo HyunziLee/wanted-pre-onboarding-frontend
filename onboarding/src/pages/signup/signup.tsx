@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useForm} from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from './schema';
+import { useNavigate } from 'react-router-dom';
 
 interface FormValue {
   email: string,
@@ -10,6 +11,7 @@ interface FormValue {
 }
 
 export default function Signup(){
+  const navigate = useNavigate()
 
   const { register, handleSubmit,  formState } = useForm<FormValue>({
     resolver: yupResolver(schema),
@@ -35,7 +37,10 @@ export default function Signup(){
             "Content-Type": "application/json"
           }
         })
-        console.log(response)
+        if(response){
+          alert("회원가입되었습니다.")
+          navigate('/');
+        }
     }catch(error){console.log(error)}
   }
   
